@@ -1,8 +1,9 @@
 """
-Author: Rajkumar Conjeevaram Mohan
-Email: rajkumarcm@yahoo.com
-Program: Data compression, and reconstruction using
-         Principal Component Analysis
+Author:     Rajkumar Conjeevaram Mohan
+University: Imperial College London
+Email:      rajkumarcm@yahoo.com
+Program:    Data compression, and reconstruction using
+            Principal Component Analysis
 """
 
 import numpy as np
@@ -117,16 +118,6 @@ def pca(X=None,Y=None,image=False,retain_threshold=0.1,plot_basic=False,plot_seq
             plt.title("Image Compressed using PCA")
             plt.imshow(reconstructed_data)
 
-
-
-
-
-    #Plotting-----------------------------------------------------------
-
-
-
-
-    #-------------------------------------------------------------------
 
     return V_new, projected_data, reconstructed_data
 

@@ -1,9 +1,11 @@
 """
-Author: Rajkumar Conjeevaram Mohan
-Email: rajkumarcm@yahoo.com
-Program: Data compression, and reconstruction using
-         Linear Discriminant Analysis ( Simultaneous Diagonalisation )
+Author:     Rajkumar Conjeevaram Mohan
+University: Imperial College London
+Email:      rajkumarcm@yahoo.com
+Program:    Data compression, and reconstruction using
+            Linear Discriminant Analysis ( Simultaneous Diagonalisation )
 """
+
 import numpy as np
 import matplotlib.pyplot as plt
 from ML.Statistical_ML import pca
@@ -50,9 +52,9 @@ def lda_sd(X=None,Y=None,retain_threshold=0.1,plot_basic=True,plot_seq=True):
     S,U = np.linalg.eig(Sw)
 
     # Sort the eigen values, and vectors
-    indices = np.argsort(S)
-    S = S[indices]
-    U = U[:,indices]
+    indices = np.argsort(np.abs(S))[::-1]
+    S = S[indices].real
+    U = U[:,indices].real
 
     # Project the between class vectors ( not the scatter matrix )
     # onto lower dimension
@@ -73,7 +75,7 @@ def lda_sd(X=None,Y=None,retain_threshold=0.1,plot_basic=True,plot_seq=True):
         for label, marker, color in zip(
                 classes, ('^', 's', 'o'), ('blue', 'red', 'green')):
             ax.scatter(projected_data[:, 0].real[Y == label],
-                        projected_data[:, 1].real[Y == label],
+                       projected_data[:, 1].real[Y == label],
                         c=color, marker=marker, alpha=0.5, label=label)
         ax.legend(loc='upper left', fancybox=True)
 

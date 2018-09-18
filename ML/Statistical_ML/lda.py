@@ -1,8 +1,9 @@
 """
-Author: Rajkumar Conjeevaram Mohan
-Email: rajkumarcm@yahoo.com
-Program: Data compression, and reconstruction using
-         Linear Discriminant Analysis
+Author:     Rajkumar Conjeevaram Mohan
+University: Imperial College London
+Email:      rajkumarcm@yahoo.com
+Program:    Data compression, and reconstruction using
+            Linear Discriminant Analysis
 """
 
 import numpy as np
