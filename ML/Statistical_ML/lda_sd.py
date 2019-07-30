@@ -87,5 +87,9 @@ def lda_sd(X=None,Y=None,retain_threshold=0.1,plot_basic=True,plot_seq=True):
         plt.show()
 
 if __name__ == '__main__':
-    lda_sd(retain_threshold=1e-9, plot_basic=True, plot_seq=False)
+    c1 = np.array([[4, 1], [2, 4], [2, 3], [3, 6], [4, 4]]).T
+    c2 = np.array([[9, 10], [6, 8], [9, 5], [8, 7], [10, 8]]).T
+    X = np.hstack([c1, c2]).T
+    Y = np.vstack([np.ones([5, 1]), np.ones([5, 1]) * 2]).reshape([-1])
+    lda_sd(X=X, Y=Y, retain_threshold=0, plot_basic=True, plot_seq=False)
     input()
