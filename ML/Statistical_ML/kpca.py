@@ -100,8 +100,8 @@ def project_data(X,B,V,S,kernel=rbf):
     I = np.eye(N, N)
     G  = pairwise_distance_matrix(X,B)
     G = kernel(G,15)
-    Y = np.linalg.inv(S) @ V.T @ (I - E) @ G[:,0]
-
+    #Y = np.linalg.inv(S) @ V.T @ (I - E) @ G[:,0]
+    Y = np.linalg.inv(S) @ V.T @ (I - E) @ (g - K @ (I * 1/N))
     return Y
 
 
